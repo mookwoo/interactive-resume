@@ -196,6 +196,53 @@ window.addEventListener('scroll', () => {
     }
 });
 
+// Blog Filtering
+const filterBtns = document.querySelectorAll('.filter-btn');
+const blogCards = document.querySelectorAll('.blog-card');
+
+filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+        // Remove active class from all buttons
+        filterBtns.forEach(b => b.classList.remove('active'));
+        // Add active class to clicked button
+        btn.classList.add('active');
+        
+        const filter = btn.getAttribute('data-filter');
+        
+        blogCards.forEach(card => {
+            if (filter === 'all') {
+                card.classList.remove('hide');
+                setTimeout(() => {
+                    card.style.animation = 'fadeInUp 0.6s ease';
+                }, 100);
+            } else {
+                if (card.getAttribute('data-category') === filter) {
+                    card.classList.remove('hide');
+                    setTimeout(() => {
+                        card.style.animation = 'fadeInUp 0.6s ease';
+                    }, 100);
+                } else {
+                    card.classList.add('hide');
+                }
+            }
+        });
+    });
+});
+
+// Blog Pagination
+const paginationBtns = document.querySelectorAll('.pagination-btn');
+const pageNumbers = document.querySelectorAll('.page-number');
+
+pageNumbers.forEach(btn => {
+    btn.addEventListener('click', () => {
+        pageNumbers.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        
+        // Scroll to blog section
+        document.getElementById('blog').scrollIntoView({ behavior: 'smooth' });
+    });
+});
+
 // Active Navigation Link
 const sections = document.querySelectorAll('section');
 const navLinks = document.querySelectorAll('.nav-link');
