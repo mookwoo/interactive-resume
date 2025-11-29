@@ -4,7 +4,7 @@ A modern, interactive portfolio website featuring a dark/light theme toggle, smo
 
 ## 📝 About This Project
 
-This project was originally created as a school project to demonstrate web development skills. It is currently a work in progress and will be updated to include my actual resume and professional information.
+This project was created as a school assignment where we were tasked with presenting our resume in a different medium. I chose to build an interactive web-based portfolio to showcase both my resume and my web development skills. It is currently a work in progress and will be updated to include my actual professional information.
 
 ## ✨ Features
 
